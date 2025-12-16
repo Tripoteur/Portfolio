@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEAN | Portfolio Interactif</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="overlay-scanlines"></div>
+    <div class="overlay-vignette"></div>
+
+    <video id="bg-video" autoplay loop muted playsinline>
+        <source src="assets/media/videofondbf.mp4" type="video/mp4">
+    </video>
+
+    <div id="canvas-container"></div>
+
+    <nav class="top-nav">
+        <div class="logo">JEAN<span class="glitch-effect">_DEV</span><img width="100px"
+                src="assets/media/Fichier 2.png"></div>
+        <div class="menu-container">
+            <button class="menu-btn">MENU</button>
+            <div class="dropdown-menu">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">ACCUEIL</a>
+                <a href="#projects">PROJETS</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="scroll-content">
+        <div class="overlay-scanlines"></div>
+        <div class="overlay-vignette"></div>
+
+        <!-- Canvas container removed to avoid duplicate ID, using the one at line 20 -->
+
+        <section class="section" id="hero">
+            <div class="hero-content">
+                <h1 class="glitch-title" data-text="JEAN">JEAN</h1>
+                <p class="subtitle">Création numérique · Visuel · Code</p>
+                <div class="cta-group">
+                    <button class="btn-primary"
+                        onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">→
+                        Projets</button>
+                    <button class="btn-secondary"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="content-wrapper">
+                <h2>ESSENCE</h2>
+                <p>Scroll pour voir l'OC te suivre...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <main class="scroll-content">
+        <!-- ... existing sections ... -->
+
+        <section class="section" id="projects">
+            <div class="content-wrapper">
+                <h2>MONUMENTS</h2>
+                <p class="subtitle">Archives Visuelles</p>
+
+                <div class="project-grid">
+                    <!-- Added Data Attributes for Lightbox -->
+                    <div class="project-item" data-title="Affiche MMI" data-desc="X">
+                        <img src="assets/scraped/50ef37ae-14a7-4e40-b502-5785901d127a_rw_1920.jpg" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="Rave 1518" data-desc="X">
+                        <img src="assets/scraped/6014510e-9595-4aad-8c5c-148e1486ed44_rw_1920.png" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="JSP" data-desc="X">
+                        <img src="assets/scraped/7bfabbbf-7b8a-469d-a406-ed55d4c14436_rw_1920.jpg" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="Pirate Zest" data-desc="X">
+                        <img src="assets/scraped/8731b2e5-e74b-48d5-b605-e5542ffae801_rw_1920.jpg" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="Love Zest" data-desc="X">
+                        <img src="assets/scraped/8ab0d47c-a4e8-4c18-b064-2578a50345fc_rw_1920.jpg" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="Monsieur Cielbleu" data-desc="X">
+                        <img src="assets/scraped/94b41fe2-23c7-46d9-badb-9b43c34af7a2_rw_1200.png" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="Not all maajik" data-desc="X">
+                        <img src="assets/scraped/a20a3c03-620d-4ac3-bd50-97330377a96f_rw_1920.jpg" loading="lazy">
+                    </div>
+                    <div class="project-item" data-title="pas ouf" data-desc="X">
+                        <img src="assets/scraped/d628991c-bb6e-4e64-90c7-9e15f6a5f15f_rw_600.png" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="content-wrapper">
+                <h2>CONNEXION</h2>
+                <p class="subtitle">Initialiser le protocole de communication</p>
+
+                <div class="contact-grid"
+                    style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="mailto:JeanFontaine@tuta.io" class="btn-primary"
+                        style="text-decoration: none; display: inline-block;">
+                        📧 Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/jean-fontaine-0b7947359/" target="_blank" class="btn-secondary"
+                        style="text-decoration: none; display: inline-block;">
+                        💼 LinkedIn
+                    </a>
+                    <a href="https://jeanfontaine.myportfolio.com/" target="_blank" class="btn-secondary"
+                        style="text-decoration: none; display: inline-block;">
+                        🎨 Portfolio Adobe
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox" class="lightbox-overlay hidden">
+        <button class="lightbox-close">✕</button>
+        <div class="lightbox-content">
+            <img id="lb-img" src="" alt="Project Image">
+            <div class="lb-details">
+                <h3 id="lb-title">PROJECT TITLE</h3>
+                <p id="lb-desc">Project description goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
